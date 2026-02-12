@@ -8,17 +8,15 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:#0b0b12;color:#fff;overflow-x:hidden;padding-top:40px}
+.partner-banner{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#5865f2,#8f8fff);color:#fff;text-align:center;padding:8px 0;font-size:14px;font-weight:600;z-index:9999;letter-spacing:.5px}
+.partner-banner a{color:#fff;text-decoration:underline;margin-left:5px}
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#11111a;position:sticky;top:40px;z-index:1000}
 nav h1{font-size:20px;font-weight:700;letter-spacing:1px}
 nav ul{display:flex;gap:25px;list-style:none}
-nav a{text-decoration:none;color:#aaa;font-size:14px;transition:.3s}
-nav a:hover{color:#fff}
-section{padding:110px 60px;display:none}
+nav button{background:none;border:none;color:#aaa;font-size:14px;cursor:pointer;transition:.3s}
+nav button:hover{color:#fff}
+section{padding:110px 60px;display:none;min-height:80vh}
 section.active{display:block}
-.partner-banner{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#5865f2,#8f8fff);color:#fff;text-align:center;padding:8px 0;font-size:14px;font-weight:600;z-index:9999;letter-spacing:.5px}
-.partner-banner a{color:#fff;text-decoration:underline;margin-left:5px}
-.partner-floating{position:fixed;bottom:20px;right:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);padding:12px 18px;border-radius:30px;font-size:13px;font-weight:600;color:#fff;z-index:9999;transition:.3s;cursor:pointer}
-.partner-floating:hover{transform:scale(1.05);border-color:#8f8fff}
 .hero{background:radial-gradient(circle at top,#1a1a2e,#0b0b12 60%)}
 .hero h2{font-size:56px;font-weight:800;background:linear-gradient(90deg,#ffffff,#9c9cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{margin-top:20px;color:#aaa;font-size:18px;max-width:650px}
@@ -27,31 +25,34 @@ section.active{display:block}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:60px}
 .product-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,0.1);padding:35px;border-radius:18px;transition:.3s}
 .product-card:hover{transform:translateY(-6px);border-color:#8f8fff}
-.product-card h3{margin-bottom:10px;font-size:20px}
+.product-card h3{margin-bottom:8px;font-size:20px}
+.version{font-size:12px;color:#8f8fff;margin-bottom:10px}
 .product-card p{color:#aaa;font-size:14px;margin-bottom:20px}
 .product-card button{padding:10px 20px;border:none;border-radius:6px;background:#fff;color:#000;font-weight:600;cursor:pointer}
-.stats{display:flex;justify-content:center;gap:100px;text-align:center;margin-top:60px}
+.stats{display:flex;justify-content:center;gap:100px;text-align:center;margin-top:60px;flex-wrap:wrap}
 .stat h3{font-size:42px;font-weight:800}
 .stat p{color:#aaa;margin-top:8px}
 .minimal{background:#fff;color:#000}
 .minimal h2{color:#000}
 .minimal p{color:#333;margin-top:20px;max-width:600px}
+.partner-floating{position:fixed;bottom:20px;right:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);padding:12px 18px;border-radius:30px;font-size:13px;font-weight:600;color:#fff;z-index:9999;transition:.3s;cursor:pointer}
+.partner-floating:hover{transform:scale(1.05);border-color:#8f8fff}
 footer{text-align:center;padding:50px;background:#11111a;color:#666}
 </style>
 </head>
 <body>
 
 <div class="partner-banner">
-🤝 Official Partner: <a href="#">Virtual</a>
+🤝 Official Partner: <a href="https://virtualexternal.netlify.app/" target="_blank">Virtual</a>
 </div>
 
 <nav>
 <h1>Cloudy Softworks</h1>
 <ul>
-<li><a href="#" onclick="showPage('home')">Home</a></li>
-<li><a href="#" onclick="showPage('products')">Products</a></li>
-<li><a href="#" onclick="showPage('stats')">Company</a></li>
-<li><a href="#" onclick="showPage('about')">About</a></li>
+<li><button onclick="showPage('home')">Home</button></li>
+<li><button onclick="showPage('products')">Products</button></li>
+<li><button onclick="showPage('stats')">Company</button></li>
+<li><button onclick="showPage('about')">About</button></li>
 </ul>
 </nav>
 
@@ -64,26 +65,35 @@ footer{text-align:center;padding:50px;background:#11111a;color:#666}
 <section id="products">
 <h2 style="font-size:34px">Our Products</h2>
 <div class="products-grid">
+
 <div class="product-card">
 <h3>Centrum</h3>
-<p>Advanced Windows software engineered for performance and stability.</p>
-<button>Download</button>
+<div class="version">Version: bd08027bb04e4045 • Windows</div>
+<p>Advanced Windows software engineered for performance and stability, designed with a modern architecture and optimized execution.</p>
+<button onclick="alert('Download integration can be connected here')">Download</button>
 </div>
+
 <div class="product-card">
 <h3>Cloudy Framework</h3>
-<p>Internal modular backend framework powering next-gen desktop applications.</p>
+<div class="version">Core Infrastructure</div>
+<p>Internal modular backend framework powering next-generation desktop applications and scalable systems.</p>
 <button>Learn More</button>
 </div>
+
 <div class="product-card">
 <h3>Cloudy Shield</h3>
-<p>Security-focused monitoring and protection layer for Windows environments.</p>
+<div class="version">Security Suite</div>
+<p>Security-focused monitoring and protection layer built for high-performance Windows environments.</p>
 <button>Learn More</button>
 </div>
+
 <div class="product-card">
 <h3>Cloudy Labs</h3>
-<p>Experimental software division developing cutting-edge prototypes.</p>
+<div class="version">Experimental Division</div>
+<p>Research and development branch focused on cutting-edge prototypes and future technologies.</p>
 <button>Coming Soon</button>
 </div>
+
 </div>
 </section>
 
@@ -110,7 +120,9 @@ footer{text-align:center;padding:50px;background:#11111a;color:#666}
 <p>Founded with a focus on performance and clean architecture, Cloudy Softworks develops specialized Windows software with precision and modern UI standards. We prioritize optimization, stability, and sleek design across every product we release.</p>
 </section>
 
-<div class="partner-floating">Partner</div>
+<div class="partner-floating" onclick="window.open('https://virtualexternal.netlify.app/','_blank')">
+Partner
+</div>
 
 <footer>
 © 2026 Cloudy Softworks. All rights reserved.
@@ -118,8 +130,9 @@ footer{text-align:center;padding:50px;background:#11111a;color:#666}
 
 <script>
 function showPage(page){
-document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.querySelectorAll("section").forEach(function(s){s.classList.remove("active")});
 document.getElementById(page).classList.add("active");
+window.scrollTo({top:0,behavior:"smooth"});
 }
 function animateValue(id,start,end,duration){
 let obj=document.getElementById(id);
@@ -134,9 +147,9 @@ if(current==end){clearInterval(timer);}
 },stepTime);
 }
 window.onload=function(){
-animateValue("users",0,4210,2000);
-animateValue("downloads",0,18954,2000);
-animateValue("uptime",0,99,2000);
+animateValue("users",0,4210,1500);
+animateValue("downloads",0,18954,1500);
+animateValue("uptime",0,99,1500);
 }
 </script>
 
