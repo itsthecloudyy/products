@@ -3,135 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centrum Products</title>
+<title>Cloudy Softworks</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0a0a0f;color:#fff;overflow-x:hidden}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#0f0f15;position:sticky;top:0;z-index:1000}
-nav h1{font-size:20px;font-weight:700}
-nav ul{display:flex;gap:20px;list-style:none}
+body{background:#0b0b12;color:#fff;overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#11111a;position:sticky;top:0;z-index:1000}
+nav h1{font-size:20px;font-weight:700;letter-spacing:1px}
+nav ul{display:flex;gap:25px;list-style:none}
 nav a{text-decoration:none;color:#aaa;font-size:14px;transition:.3s}
 nav a:hover{color:#fff}
-section{padding:100px 50px;display:none}
+
+section{padding:110px 60px;display:none}
 section.active{display:block}
 
-/* Premium SaaS Hero */
-.hero{background:linear-gradient(135deg,#141420,#0b0b12)}
-.hero h2{font-size:48px;font-weight:800;background:linear-gradient(90deg,#fff,#8f8fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{margin-top:20px;color:#aaa;font-size:18px;max-width:600px}
-.btn{margin-top:30px;padding:14px 28px;border:none;border-radius:8px;background:linear-gradient(90deg,#5865f2,#8f8fff);color:#fff;font-weight:600;cursor:pointer;transition:.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(88,101,242,.6)}
+/* HERO */
+.hero{
+background:radial-gradient(circle at top,#1a1a2e,#0b0b12 60%);
+}
+.hero h2{
+font-size:56px;
+font-weight:800;
+background:linear-gradient(90deg,#ffffff,#9c9cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.hero p{
+margin-top:20px;
+color:#aaa;
+font-size:18px;
+max-width:650px;
+}
+.btn{
+margin-top:35px;
+padding:14px 32px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#5865f2,#8f8fff);
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s
+}
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(88,101,242,.6)
+}
 
-/* Glass Cards */
-.glass-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-.glass-card{
+/* GLASS PRODUCT GRID */
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:60px
+}
+.product-card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
 border:1px solid rgba(255,255,255,0.1);
-padding:30px;border-radius:16px;transition:.3s}
-.glass-card:hover{transform:translateY(-5px);border-color:#8f8fff}
-.glass-card h3{margin-bottom:10px}
-.glass-card p{color:#aaa;font-size:14px}
+padding:35px;
+border-radius:18px;
+transition:.3s
+}
+.product-card:hover{
+transform:translateY(-6px);
+border-color:#8f8fff
+}
+.product-card h3{margin-bottom:10px;font-size:20px}
+.product-card p{color:#aaa;font-size:14px;margin-bottom:20px}
+.product-card button{
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:#fff;
+color:#000;
+font-weight:600;
+cursor:pointer
+}
 
-/* Minimal monochrome */
-.mono{background:#ffffff;color:#000}
-.mono h2{color:#000}
-.mono-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px}
-.mono-card{border:1px solid #000;padding:30px;border-radius:8px;transition:.3s}
-.mono-card:hover{background:#000;color:#fff}
+/* STATS */
+.stats{
+display:flex;
+justify-content:center;
+gap:100px;
+text-align:center;
+margin-top:60px
+}
+.stat h3{font-size:42px;font-weight:800}
+.stat p{color:#aaa;margin-top:8px}
 
-/* Stats */
-.stats{display:flex;justify-content:center;gap:80px;text-align:center}
-.stat h3{font-size:40px;font-weight:800}
-.stat p{color:#aaa;margin-top:5px}
+/* MINIMAL SECTION */
+.minimal{
+background:#fff;
+color:#000
+}
+.minimal h2{color:#000}
+.minimal p{color:#333;margin-top:20px;max-width:600px}
 
-/* Footer */
-footer{text-align:center;padding:40px;background:#0f0f15;color:#666}
+/* FOOTER */
+footer{
+text-align:center;
+padding:50px;
+background:#11111a;
+color:#666
+}
 </style>
 </head>
 <body>
 
 <nav>
-<h1>Centrum</h1>
+<h1>Cloudy Softworks</h1>
 <ul>
 <li><a href="#" onclick="showPage('home')">Home</a></li>
 <li><a href="#" onclick="showPage('products')">Products</a></li>
-<li><a href="#" onclick="showPage('stats')">Stats</a></li>
-<li><a href="#" onclick="showPage('minimal')">Minimal</a></li>
+<li><a href="#" onclick="showPage('stats')">Company</a></li>
+<li><a href="#" onclick="showPage('about')">About</a></li>
 </ul>
 </nav>
 
-<!-- Premium SaaS Hero -->
+<!-- HERO -->
 <section id="home" class="hero active">
-<h2>Centrum Suite</h2>
-<p>Modern Windows external software built for version-bd08027bb04e4045. Fast, lightweight and optimized.</p>
-<button class="btn" onclick="window.location.href='https://gofile.io/d/6rDSsM'">Download Now</button>
+<h2>Innovative Software.<br>Built Different.</h2>
+<p>Cloudy Softworks builds modern, high-performance Windows software with precision engineering and clean design.</p>
+<button class="btn" onclick="showPage('products')">Explore Products</button>
 </section>
 
-<!-- Dark Glass Product List -->
+<!-- PRODUCTS -->
 <section id="products">
-<h2 style="margin-bottom:50px;font-size:32px">Products</h2>
-<div class="glass-grid">
-<div class="glass-card">
-<h3>Centrum Core</h3>
-<p>Main executable optimized for Windows platform.</p>
+<h2 style="font-size:34px">Our Products</h2>
+<div class="products-grid">
+
+<div class="product-card">
+<h3>Centrum</h3>
+<p>Advanced Windows external software engineered for performance and stability. Compatible with version-bd08027bb04e4045.</p>
+<button onclick="window.location.href='https://gofile.io/d/6rDSsM'">Download</button>
 </div>
-<div class="glass-card">
-<h3>Centrum Lite</h3>
-<p>Lightweight performance-focused build.</p>
+
+<div class="product-card">
+<h3>Cloudy Framework</h3>
+<p>Internal modular backend framework powering next-gen desktop applications.</p>
+<button>Learn More</button>
 </div>
-<div class="glass-card">
-<h3>Centrum Pro</h3>
-<p>Extended feature version with enhanced modules.</p>
+
+<div class="product-card">
+<h3>Cloudy Shield</h3>
+<p>Security-focused monitoring and protection layer for Windows environments.</p>
+<button>Learn More</button>
 </div>
-<div class="glass-card">
-<h3>Centrum Dev</h3>
-<p>Developer build for advanced testing.</p>
+
+<div class="product-card">
+<h3>Cloudy Labs</h3>
+<p>Experimental software division developing cutting-edge prototypes.</p>
+<button>Coming Soon</button>
 </div>
+
 </div>
 </section>
 
-<!-- Download Stats -->
+<!-- COMPANY STATS -->
 <section id="stats">
-<h2 style="margin-bottom:60px;font-size:32px;text-align:center">Download Statistics</h2>
+<h2 style="text-align:center;font-size:34px">Company Metrics</h2>
 <div class="stats">
-<div class="stat">
-<h3 id="downloads">0</h3>
-<p>Total Downloads</p>
-</div>
 <div class="stat">
 <h3 id="users">0</h3>
 <p>Active Users</p>
 </div>
 <div class="stat">
+<h3 id="downloads">0</h3>
+<p>Total Downloads</p>
+</div>
+<div class="stat">
 <h3 id="uptime">0</h3>
-<p>% Uptime</p>
+<p>% Infrastructure Uptime</p>
 </div>
 </div>
 </section>
 
-<!-- Minimal Monochrome Version -->
-<section id="minimal" class="mono">
-<h2 style="font-size:32px">Minimal Edition</h2>
-<div class="mono-grid">
-<div class="mono-card">
-<h3>Centrum Basic</h3>
-<p>Clean minimal design edition.</p>
-</div>
-<div class="mono-card">
-<h3>Centrum Advanced</h3>
-<p>Enhanced version in monochrome style.</p>
-</div>
-<div class="mono-card">
-<h3>Centrum Enterprise</h3>
-<p>Full feature professional build.</p>
-</div>
-</div>
+<!-- ABOUT (Minimal Style) -->
+<section id="about" class="minimal">
+<h2>About Cloudy Softworks</h2>
+<p>
+Founded with a focus on performance and clean architecture, Cloudy Softworks develops specialized Windows software with precision and modern UI standards.
+We prioritize optimization, stability, and sleek design across every product we release.
+</p>
 </section>
 
 <footer>
-© 2026 Centrum. All rights reserved.
+© 2026 Cloudy Softworks. All rights reserved.
 </footer>
 
 <script>
@@ -140,7 +198,6 @@ document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
 document.getElementById(page).classList.add("active");
 }
 
-/* Animated Counters */
 function animateValue(id,start,end,duration){
 let obj=document.getElementById(id);
 let range=end-start;
@@ -155,8 +212,8 @@ if(current==end){clearInterval(timer);}
 }
 
 window.onload=function(){
-animateValue("downloads",0,12854,2000);
-animateValue("users",0,3120,2000);
+animateValue("users",0,4210,2000);
+animateValue("downloads",0,18954,2000);
 animateValue("uptime",0,99,2000);
 }
 </script>
