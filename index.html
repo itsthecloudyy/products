@@ -7,109 +7,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0b0b12;color:#fff;overflow-x:hidden}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#11111a;position:sticky;top:0;z-index:1000}
+body{background:#0b0b12;color:#fff;overflow-x:hidden;padding-top:40px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#11111a;position:sticky;top:40px;z-index:1000}
 nav h1{font-size:20px;font-weight:700;letter-spacing:1px}
 nav ul{display:flex;gap:25px;list-style:none}
 nav a{text-decoration:none;color:#aaa;font-size:14px;transition:.3s}
 nav a:hover{color:#fff}
-
 section{padding:110px 60px;display:none}
 section.active{display:block}
-
-/* HERO */
-.hero{
-background:radial-gradient(circle at top,#1a1a2e,#0b0b12 60%);
-}
-.hero h2{
-font-size:56px;
-font-weight:800;
-background:linear-gradient(90deg,#ffffff,#9c9cff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-.hero p{
-margin-top:20px;
-color:#aaa;
-font-size:18px;
-max-width:650px;
-}
-.btn{
-margin-top:35px;
-padding:14px 32px;
-border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#5865f2,#8f8fff);
-color:#fff;
-font-weight:600;
-cursor:pointer;
-transition:.3s
-}
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 0 25px rgba(88,101,242,.6)
-}
-
-/* GLASS PRODUCT GRID */
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:60px
-}
-.product-card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.1);
-padding:35px;
-border-radius:18px;
-transition:.3s
-}
-.product-card:hover{
-transform:translateY(-6px);
-border-color:#8f8fff
-}
+.partner-banner{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#5865f2,#8f8fff);color:#fff;text-align:center;padding:8px 0;font-size:14px;font-weight:600;z-index:9999;letter-spacing:.5px}
+.partner-banner a{color:#fff;text-decoration:underline;margin-left:5px}
+.partner-floating{position:fixed;bottom:20px;right:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);padding:12px 18px;border-radius:30px;font-size:13px;font-weight:600;color:#fff;z-index:9999;transition:.3s;cursor:pointer}
+.partner-floating:hover{transform:scale(1.05);border-color:#8f8fff}
+.hero{background:radial-gradient(circle at top,#1a1a2e,#0b0b12 60%)}
+.hero h2{font-size:56px;font-weight:800;background:linear-gradient(90deg,#ffffff,#9c9cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin-top:20px;color:#aaa;font-size:18px;max-width:650px}
+.btn{margin-top:35px;padding:14px 32px;border:none;border-radius:10px;background:linear-gradient(90deg,#5865f2,#8f8fff);color:#fff;font-weight:600;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 25px rgba(88,101,242,.6)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:60px}
+.product-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,0.1);padding:35px;border-radius:18px;transition:.3s}
+.product-card:hover{transform:translateY(-6px);border-color:#8f8fff}
 .product-card h3{margin-bottom:10px;font-size:20px}
 .product-card p{color:#aaa;font-size:14px;margin-bottom:20px}
-.product-card button{
-padding:10px 20px;
-border:none;
-border-radius:6px;
-background:#fff;
-color:#000;
-font-weight:600;
-cursor:pointer
-}
-
-/* STATS */
-.stats{
-display:flex;
-justify-content:center;
-gap:100px;
-text-align:center;
-margin-top:60px
-}
+.product-card button{padding:10px 20px;border:none;border-radius:6px;background:#fff;color:#000;font-weight:600;cursor:pointer}
+.stats{display:flex;justify-content:center;gap:100px;text-align:center;margin-top:60px}
 .stat h3{font-size:42px;font-weight:800}
 .stat p{color:#aaa;margin-top:8px}
-
-/* MINIMAL SECTION */
-.minimal{
-background:#fff;
-color:#000
-}
+.minimal{background:#fff;color:#000}
 .minimal h2{color:#000}
 .minimal p{color:#333;margin-top:20px;max-width:600px}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:50px;
-background:#11111a;
-color:#666
-}
+footer{text-align:center;padding:50px;background:#11111a;color:#666}
 </style>
 </head>
 <body>
+
+<div class="partner-banner">
+🤝 Official Partner: <a href="#">Virtual</a>
+</div>
 
 <nav>
 <h1>Cloudy Softworks</h1>
@@ -121,46 +55,38 @@ color:#666
 </ul>
 </nav>
 
-<!-- HERO -->
 <section id="home" class="hero active">
 <h2>Innovative Software.<br>Built Different.</h2>
 <p>Cloudy Softworks builds modern, high-performance Windows software with precision engineering and clean design.</p>
 <button class="btn" onclick="showPage('products')">Explore Products</button>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products">
 <h2 style="font-size:34px">Our Products</h2>
 <div class="products-grid">
-
 <div class="product-card">
 <h3>Centrum</h3>
-<p>Advanced Windows external software engineered for performance and stability. Compatible with version-bd08027bb04e4045.</p>
-<button onclick="window.location.href='https://gofile.io/d/6rDSsM'">Download</button>
+<p>Advanced Windows software engineered for performance and stability.</p>
+<button>Download</button>
 </div>
-
 <div class="product-card">
 <h3>Cloudy Framework</h3>
 <p>Internal modular backend framework powering next-gen desktop applications.</p>
 <button>Learn More</button>
 </div>
-
 <div class="product-card">
 <h3>Cloudy Shield</h3>
 <p>Security-focused monitoring and protection layer for Windows environments.</p>
 <button>Learn More</button>
 </div>
-
 <div class="product-card">
 <h3>Cloudy Labs</h3>
 <p>Experimental software division developing cutting-edge prototypes.</p>
 <button>Coming Soon</button>
 </div>
-
 </div>
 </section>
 
-<!-- COMPANY STATS -->
 <section id="stats">
 <h2 style="text-align:center;font-size:34px">Company Metrics</h2>
 <div class="stats">
@@ -179,14 +105,12 @@ color:#666
 </div>
 </section>
 
-<!-- ABOUT (Minimal Style) -->
 <section id="about" class="minimal">
 <h2>About Cloudy Softworks</h2>
-<p>
-Founded with a focus on performance and clean architecture, Cloudy Softworks develops specialized Windows software with precision and modern UI standards.
-We prioritize optimization, stability, and sleek design across every product we release.
-</p>
+<p>Founded with a focus on performance and clean architecture, Cloudy Softworks develops specialized Windows software with precision and modern UI standards. We prioritize optimization, stability, and sleek design across every product we release.</p>
 </section>
+
+<div class="partner-floating">Partner</div>
 
 <footer>
 © 2026 Cloudy Softworks. All rights reserved.
@@ -197,7 +121,6 @@ function showPage(page){
 document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
 document.getElementById(page).classList.add("active");
 }
-
 function animateValue(id,start,end,duration){
 let obj=document.getElementById(id);
 let range=end-start;
@@ -210,7 +133,6 @@ obj.textContent=current;
 if(current==end){clearInterval(timer);}
 },stepTime);
 }
-
 window.onload=function(){
 animateValue("users",0,4210,2000);
 animateValue("downloads",0,18954,2000);
